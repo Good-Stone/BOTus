@@ -1,7 +1,7 @@
 {
   "name": "BOTus",
   "version": "1.0.0",
-  "description": "Node.js Boilerplate",
+  "description": "Mabootyng Discord Bot",
   "main": "server.js",
   "scripts": {
     "test": "echo \"No tests\"",
@@ -22,7 +22,7 @@
     "type": "git",
     "url": "git+https://github.com/MABOOTYNG-RACKY/BOTus.git"
   },
-  "author": "Jan Charles M. Adona",
+  "author": "MABOOTYNG-RACKY",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MABOOTYNG-RACKY/BOTus/issues"
