@@ -1,11 +1,21 @@
 
-import Discord from 'discord.js';
-
 const log = require('debug')('bot');
+const Client = require('discord.js').Client;
 
-export default class Bot extends Discord.Client {
+export default class Bot extends Client {
   contructor() {
-    super.login(process.env.DISCORD_TOKEN);
+    this.login(process.env.DISCORD_TOKEN);
     log('Im Alive!');
   }
+
+  static sendMessage(channel, message) {
+    channel.send(message);
+    log(`Message sent! ${message}`);
+  }
+
+  static receiveMessage(channel, message) {
+    // handle message nigga
+    log(`Message received! ${message}`);
+  }
+
 }
