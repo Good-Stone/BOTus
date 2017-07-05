@@ -16,7 +16,8 @@
     "build": "run-p build:*",
     "prestart:dev": "eslint src/",
     "start:dev": "node --require dotenv/config --require babel-register src/server.js",
-    "dev": "nodemon --watch 'src/**/*.js' --exec npm run start:dev"
+    "dev": "nodemon --watch 'src/**/*.js' --exec npm run start:dev",
+    "start": "node dist/server.js"
   },
   "repository": {
     "type": "git",
