@@ -15,7 +15,9 @@ export default (app) => {
   // Insert routes below
   app.use('/', (req, res, next) => {
     res.send({
-      message: 'Unmatched route =(('
+      message: 'Unmatched route =((',
     });
+
+    next();
   });
 };
