@@ -6,7 +6,7 @@ import {
 
 import {
   randomize,
-  parsedMessage,
+  parseMessage,
 } from './bot.utils';
 
 const log = require('debug')('bot.event-functions');
@@ -16,7 +16,7 @@ export function onReady() {
 }
 
 export function onReceivedMessage(message) {
-  const { COMMAND, params } = parsedMessage(message);
+  const { COMMAND, params } = parseMessage(message);
   switch (COMMAND) {
     case COMMAND_RANDOMIZE: randomize(params);
       break;

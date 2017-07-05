@@ -3,6 +3,6 @@ export function randomize() {
 
 }
 
-export function parsedMessage() {
+export function parseMessage() {
 
 }
