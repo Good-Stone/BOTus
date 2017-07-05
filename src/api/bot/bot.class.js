@@ -1,4 +1,3 @@
-
 import { Client } from 'discord.js';
 
 const log = require('debug')('bot');
