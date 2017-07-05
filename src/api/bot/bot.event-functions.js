@@ -5,7 +5,7 @@ import {
 
 import {
   randomize,
-  parsedMessage,
+  parseMessage,
 } from './bot.utils';
 
 const log = require('debug')('bot.event-functions');
@@ -15,10 +15,21 @@ export function onReady() {
 }
 
 export function onReceivedMessage(message) {
-  const { COMMAND, params } = parsedMessage(message);
+  const { COMMAND, params } = parseMessage(message);
+
+  log(parseMessage(message));
   switch (COMMAND) {
-    case COMMAND_RANDOMIZE: randomize(params);
-      break;
-    default: log('Wat?');
+    case COMMAND_RANDOMIZE:
+      {
+        const teams = randomize(params);
+
+        message.channel.send(`mga bobong radiant: ${teams[0]}\nmga bobong dire: ${teams[1]}`);
+        break;
+      }
+
+    default:
+      {
+        log('Wat?');
+      }
   }
 }
