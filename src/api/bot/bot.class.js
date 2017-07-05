@@ -1,11 +1,12 @@
 
-const log = require('debug')('bot');
-const Client = require('discord.js').Client;
+import { Client } from 'discord.js';
 
-export default class Bot extends Client {
-  contructor() {
-    this.login(process.env.DISCORD_TOKEN);
-    log('Im Alive!');
+const log = require('debug')('bot');
+
+export default class Bot {
+  constructor() {
+    this.client = new Client();
+    this.client.login(process.env.DISCORD_TOKEN);
   }
 
   static sendMessage(channel, message) {
