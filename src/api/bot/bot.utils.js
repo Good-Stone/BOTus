@@ -1,5 +1,8 @@
 
+export function randomize() {
 
-export default function randomize() {
+}
+
+export function parsedMessage() {
 
 }
