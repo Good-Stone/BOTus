@@ -9,7 +9,6 @@ import {
 } from './bot.utils';
 
 const log = require('debug')('bot.event-functions');
-const botus = require('botus');
 
 export function onReady() {
   log(`${WELCOME_MESSAGE} Nigga im alive`);
