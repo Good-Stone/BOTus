@@ -12,6 +12,11 @@ const botus = new Client();
 
 function initBot() {
   log('Init Bot');
+
+  botus.sendMessage = (channel, message, content) => {
+    //
+    channel.send(content);
+  };
 }
 
 initBot();
