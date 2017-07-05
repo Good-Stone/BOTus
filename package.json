@@ -1,5 +1,5 @@
 {
-  "name": "node-boilerplate",
+  "name": "BOTus",
   "version": "1.0.0",
   "description": "Node.js Boilerplate",
   "main": "server.js",
@@ -20,14 +20,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/septa97/node-boilerplate.git"
+    "url": "git+https://github.com/MABOOTYNG-RACKY/BOTus.git"
   },
   "author": "Jan Charles M. Adona",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/septa97/node-boilerplate/issues"
+    "url": "https://github.com/MABOOTYNG-RACKY/BOTus/issues"
   },
-  "homepage": "https://github.com/septa97/node-boilerplate#readme",
+  "homepage": "https://github.com/MABOOTYNG-RACKY/BOTus#readme",
   "devDependencies": {
     "apidoc": "^0.17.6",
     "babel-cli": "^6.24.1",
