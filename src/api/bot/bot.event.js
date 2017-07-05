@@ -1,4 +1,3 @@
-
 import Botus from './bot.class';
 
 import {

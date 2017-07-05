@@ -1,4 +1,3 @@
-
 import {
   WELCOME_MESSAGE,
   COMMAND_RANDOMIZE,
