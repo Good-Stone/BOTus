@@ -1,0 +1,54 @@
+{
+  "name": "node-boilerplate",
+  "version": "1.0.0",
+  "description": "Node.js Boilerplate",
+  "main": "server.js",
+  "scripts": {
+    "test": "nyc --reporter=html --reporter=text mocha --require babel-register src/api/**/*.tests.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "clean:doc:api": "rimraf docs/api/ && mkdirp docs/api/",
+    "clean:doc": "run-s clean:doc:*",
+    "clean:server": "rimraf dist/ && mkdirp dist/",
+    "clean": "run-p clean:*",
+    "build:doc:api": "npm run clean:doc:api && apidoc -i src/ -o docs/api",
+    "build:doc": "run-p build:doc:*",
+    "build:server": "npm run clean:server && babel src/ -d dist/ --source-maps --copy-files",
+    "build": "run-p build:*",
+    "prestart:dev": "eslint src/",
+    "start:dev": "node --require dotenv/config --require babel-register src/server.js",
+    "dev": "nodemon --watch 'src/**/*.js' --exec npm run start:dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/septa97/node-boilerplate.git"
+  },
+  "author": "Jan Charles M. Adona",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/septa97/node-boilerplate/issues"
+  },
+  "homepage": "https://github.com/septa97/node-boilerplate#readme",
+  "devDependencies": {
+    "apidoc": "^0.17.6",
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.1",
+    "coveralls": "^2.13.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.3.0",
+    "mkdirp": "^0.5.1",
+    "mocha": "^3.4.2",
+    "npm-run-all": "^4.0.2",
+    "nyc": "^10.3.2",
+    "rimraf": "^2.6.1"
+  },
+  "dependencies": {
+    "chai": "^4.0.0",
+    "chalk": "^1.1.3",
+    "debug": "^2.6.8",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "lodash": "4.17.4",
+    "supertest": "^3.0.0"
+  }
+}
