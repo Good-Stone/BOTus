@@ -4,7 +4,7 @@
   "description": "Node.js Boilerplate",
   "main": "server.js",
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text mocha --require babel-register src/api/**/*.tests.js",
+    "test": "echo \"No tests\"",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "clean:doc:api": "rimraf docs/api/ && mkdirp docs/api/",
     "clean:doc": "run-s clean:doc:*",
