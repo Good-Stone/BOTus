@@ -66,7 +66,11 @@ function onReceivedMessage(message) {
         message.channel.send('mga bobong radiant: ' + teams[0] + '\nmga bobong dire: ' + teams[1]);
         break;
       }
-
+    case _bot3.COMMAND_GIFFME:
+      {
+        (0, _bot4.getRandomMeme)(message.channel, _bot3.IMAGES);
+        break;
+      }
     default:
       {
         log('Wat?');

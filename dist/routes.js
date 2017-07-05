@@ -28,6 +28,8 @@ exports.default = function (app) {
     res.send({
       message: 'Unmatched route =(('
     });
+
+    next();
   });
 };
 //# sourceMappingURL=routes.js.map

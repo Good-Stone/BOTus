@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.randomize = randomize;
 exports.parseMessage = parseMessage;
+exports.getRandomMeme = getRandomMeme;
 
 var _lodash = require('lodash');
 
@@ -31,5 +32,13 @@ function parseMessage(message) {
   log('command: ' + COMMAND + ', params: ' + params);
 
   return { COMMAND: COMMAND, params: params };
+}
+
+function getRandomMeme(channel, images) {
+  var imageUrl = _lodash2.default.sample(images);
+  log(imageUrl);
+  channel.send('', {
+    file: imageUrl
+  });
 }
 //# sourceMappingURL=bot.utils.js.map
