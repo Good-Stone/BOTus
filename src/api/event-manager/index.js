@@ -1,4 +1,4 @@
 
-import Bot from './bot.class';
+import EventManager from './event-manager.class';
 
-export default Bot;
+export default EventManager;
