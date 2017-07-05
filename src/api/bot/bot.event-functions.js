@@ -1,6 +1,7 @@
 import {
   WELCOME_MESSAGE,
   COMMAND_RANDOMIZE,
+  COMMAND_GIFFME,
 } from './bot.constants';
 
 import {
@@ -18,6 +19,8 @@ export function onReceivedMessage(message) {
   const { COMMAND, params } = parseMessage(message);
   switch (COMMAND) {
     case COMMAND_RANDOMIZE: randomize(params);
+      break;
+    case COMMAND_GIFFME:
       break;
     default: log('Wat?');
   }
