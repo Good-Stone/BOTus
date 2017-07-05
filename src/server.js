@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8000;
 
 // Load the routes
 require('./routes').default(app);
-require('./api/bot/bot.event');
+require('./api/bot/bot.event.js');
 // Start the server
 app.listen(PORT, () => log(`Server listening on port ${green(PORT)}`));
 
