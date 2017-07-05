@@ -2,11 +2,13 @@ import {
   WELCOME_MESSAGE,
   COMMAND_RANDOMIZE,
   COMMAND_GIFFME,
+  IMAGES,
 } from './bot.constants';
 
 import {
   randomize,
   parseMessage,
+  getRandomMeme,
 } from './bot.utils';
 
 const log = require('debug')('bot.event-functions');
@@ -18,10 +20,21 @@ export function onReady() {
 export function onReceivedMessage(message) {
   const { COMMAND, params } = parseMessage(message);
   switch (COMMAND) {
-    case COMMAND_RANDOMIZE: randomize(params);
-      break;
+    case COMMAND_RANDOMIZE:
+      {
+        const teams = randomize(params);
+
+        message.channel.send(`mga bobong radiant: ${teams[0]}\nmga bobong dire: ${teams[1]}`);
+        break;
+      }
     case COMMAND_GIFFME:
-      break;
-    default: log('Wat?');
+      {
+        getRandomMeme(message.channel, IMAGES);
+        break;
+      }
+    default:
+      {
+        log('Wat?');
+      }
   }
 }
