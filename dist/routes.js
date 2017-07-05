@@ -24,5 +24,10 @@ exports.default = function (app) {
   });
 
   // Insert routes below
+  app.use('/', function (req, res, next) {
+    res.send({
+      message: 'Unmatched route =(('
+    });
+  });
 };
 //# sourceMappingURL=routes.js.map
