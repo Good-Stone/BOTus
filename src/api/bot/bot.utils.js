@@ -20,3 +20,11 @@ export function parseMessage(message) {
 
   return { COMMAND, params };
 }
+
+export function getRandomMeme(channel, images) {
+  const imageUrl = _.sample(images);
+  log(imageUrl);
+  channel.send('', {
+    file: imageUrl,
+  });
+}
