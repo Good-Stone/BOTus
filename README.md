@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/MABOOTYNG-RACKY/BOTus.png?label=ready&title=Ready)](https://waffle.io/MABOOTYNG-RACKY/BOTus?utm_source=badge)
 BOTus
 ===================
 
