@@ -6,9 +6,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.onReady = onReady;
 exports.onReceivedMessage = onReceivedMessage;
 
-var _moment = require('moment');
+var _momentTimezone = require('moment-timezone');
 
-var _moment2 = _interopRequireDefault(_moment);
+var _momentTimezone2 = _interopRequireDefault(_momentTimezone);
 
 var _bot = require('./bot.class');
 
@@ -27,7 +27,7 @@ function onReady() {
 
   // Loop for checking the current time
   setInterval(function () {
-    var currentTime = (0, _moment2.default)().format('h:mm:ss a');
+    var currentTime = _momentTimezone2.default.tz('Asia/Manila').format('h:mm:ss a');
 
     // Morning, Noon, and Evening greeting
     if (currentTime === '7:00:00 am') {
