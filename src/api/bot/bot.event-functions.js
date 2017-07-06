@@ -9,6 +9,7 @@ import {
   GREETING_EVENING,
 } from './bot.constants';
 import {
+  error,
   parseMessage,
   getRandomizedTeams,
   getRandomMeme,
@@ -52,15 +53,16 @@ export function onReady() {
 
 export function onReceivedMessage(message) {
   const { COMMAND, params } = parseMessage(message);
-  log(`COMMAND: ${COMMAND}, params: ${params}`);
 
   if (COMMAND) {
+    log(`COMMAND: ${COMMAND}, params: ${params}`);
+
     switch (COMMAND) {
       case COMMAND_RANDOMIZE: getRandomizedTeams(message.channel, params);
         break;
       case COMMAND_GIFFME: getRandomMeme(message.channel, IMAGES);
         break;
-      default: log('Wat?');
+      default: error(message.channel, `Invalid command ${COMMAND}`);
     }
   }
 }

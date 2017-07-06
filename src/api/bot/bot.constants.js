@@ -1,4 +1,5 @@
 // Messages
+export const PREFIX = '!';
 export const WELCOME_MESSAGE = 'imma buraot u';
 export const FAREWELL_MESSAGE = 'imma buraot u';
 export const ERROR_MESSAGES = [
@@ -6,13 +7,16 @@ export const ERROR_MESSAGES = [
   'ANO BA?!?',
   'nanay mo',
   'pucha naman o',
+  'ako lang pwedeng cactus dito ah',
+  'libre mo muna ko tols',
+  'gago ka ba?',
 ];
 // Events
 export const EVENT_READY = 'ready';
 export const EVENT_RECEIVED_MESSAGE = 'message';
-// Commands
-export const COMMAND_RANDOMIZE = '!randomize';
-export const COMMAND_GIFFME = '!giffme';
+// Commands without prefix
+export const COMMAND_RANDOMIZE = 'randomize';
+export const COMMAND_GIFFME = 'giffme';
 
 export const IMAGES = [
   'http://i.imgur.com/IrkSwDC.jpg',

@@ -1,11 +1,12 @@
 import _ from 'lodash';
 import {
+  PREFIX,
   ERROR_MESSAGES,
 } from './bot.constants';
 
 const log = require('debug')('bot.utils');
 
-function error(channel, message) {
+export function error(channel, message) {
   channel.send(`${_.sample(ERROR_MESSAGES)}\n*${message}*`);
   log(message);
 }
@@ -13,13 +14,19 @@ function error(channel, message) {
 export function parseMessage(message) {
   log(`Parsing ${message}`);
 
-  const content = message.content.split(' ');
-  const COMMAND = content[0];
-  const params = content.slice(1);
+  let content = message.content;
 
-  log(`command: ${COMMAND}, params: ${params}`);
+  if (content.startsWith(PREFIX)) {
+    content = content.split(' ');
+    const COMMAND = content[0].replace(PREFIX, '');
+    const params = content.slice(1);
 
-  return { COMMAND, params };
+    log(`command: ${COMMAND}, params: ${params}`);
+
+    return { COMMAND, params };
+  }
+
+  return { params: content };
 }
 
 export function getRandomizedTeams(channel, players) {
