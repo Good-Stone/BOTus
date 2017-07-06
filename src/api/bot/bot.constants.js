@@ -1,6 +1,12 @@
 // Messages
 export const WELCOME_MESSAGE = 'imma buraot u';
 export const FAREWELL_MESSAGE = 'imma buraot u';
+export const ERROR_MESSAGES = [
+  'hyok hyok hyok hyok',
+  'ANO BA?!?',
+  'nanay mo',
+  'pucha naman o',
+];
 // Events
 export const EVENT_READY = 'ready';
 export const EVENT_RECEIVED_MESSAGE = 'message';
