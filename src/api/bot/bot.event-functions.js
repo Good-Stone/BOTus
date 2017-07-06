@@ -62,7 +62,7 @@ export function onReceivedMessage(message) {
         break;
       case COMMAND_GIFFME: getRandomMeme(message.channel, IMAGES);
         break;
-      default: error(message.channel, `Invalid command ${COMMAND}`);
+      default: error(message.channel, `Invalid command "${COMMAND}"`);
     }
   }
 }
