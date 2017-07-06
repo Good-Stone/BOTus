@@ -57,24 +57,19 @@ function onReceivedMessage(message) {
       COMMAND = _parseMessage.COMMAND,
       params = _parseMessage.params;
 
-  log((0, _bot4.parseMessage)(message));
-  switch (COMMAND) {
-    case _bot3.COMMAND_RANDOMIZE:
-      {
-        var teams = (0, _bot4.randomize)(params);
+  if (COMMAND) {
+    log('COMMAND: ' + COMMAND + ', params: ' + params);
 
-        message.channel.send('mga bobong radiant: ' + teams[0] + '\nmga bobong dire: ' + teams[1]);
+    switch (COMMAND) {
+      case _bot3.COMMAND_RANDOMIZE:
+        (0, _bot4.getRandomizedTeams)(message.channel, params);
         break;
-      }
-    case _bot3.COMMAND_GIFFME:
-      {
+      case _bot3.COMMAND_GIFFME:
         (0, _bot4.getRandomMeme)(message.channel, _bot3.IMAGES);
         break;
-      }
-    default:
-      {
-        log('Wat?');
-      }
+      default:
+        (0, _bot4.error)(message.channel, 'Invalid command ' + COMMAND);
+    }
   }
 }
 //# sourceMappingURL=bot.event-functions.js.map
