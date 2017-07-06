@@ -20,3 +20,7 @@ export const IMAGES = [
   'http://i.imgur.com/3WJbSiF.jpg',
   'http://i.imgur.com/XmZSZ7q.jpg',
 ];
+// Greetings
+export const GREETING_MORNING = 'Good morning niggas! Kain na mga butaw!';
+export const GREETING_NOON = 'Lunch time na boiisss!';
+export const GREETING_EVENING = 'Dinner time na mga bobo!';
