@@ -1,7 +1,7 @@
 language: node_js
 node_js:
 - 8.0.0
-after_success: git push heroku master
+after_success: npm run coverage
 cache:
   directories:
   - node_modules
