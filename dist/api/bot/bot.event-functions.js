@@ -6,6 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.onReady = onReady;
 exports.onReceivedMessage = onReceivedMessage;
 
+var _moment = require('moment');
+
+var _moment2 = _interopRequireDefault(_moment);
+
 var _bot = require('./bot.class');
 
 var _bot2 = _interopRequireDefault(_bot);
@@ -23,26 +27,22 @@ function onReady() {
 
   // Loop for checking the current time
   setInterval(function () {
-    var currentTime = new Date().toLocaleTimeString().split(':');
-    var hour = parseInt(currentTime[0], 10);
-    var minute = parseInt(currentTime[1], 10);
-    var second = parseInt(currentTime[2], 10);
-    log(hour, minute, second);
+    var currentTime = (0, _moment2.default)().format('h:mm:ss a');
 
     // Morning, Noon, and Evening greeting
-    if (hour === 7 && minute === 0 && second === 0) {
+    if (currentTime === '7:00:00 am') {
       _bot2.default.channels.forEach(function (channel) {
         if (channel.type === 'text') {
           channel.send(_bot3.GREETING_MORNING);
         }
       });
-    } else if (hour === 12 && minute === 0 && second === 0) {
+    } else if (currentTime === '12:00:00 pm') {
       _bot2.default.channels.forEach(function (channel) {
         if (channel.type === 'text') {
           channel.send(_bot3.GREETING_NOON);
         }
       });
-    } else if (hour === 19 && minute === 0 && second === 0) {
+    } else if (currentTime === '7:00:00 pm') {
       _bot2.default.channels.forEach(function (channel) {
         if (channel.type === 'text') {
           channel.send(_bot3.GREETING_EVENING);
@@ -66,6 +66,9 @@ function onReceivedMessage(message) {
         break;
       case _bot3.COMMAND_GIFFME:
         (0, _bot4.getRandomMeme)(message.channel, _bot3.IMAGES);
+        break;
+      case _bot3.COMMAND_TIME:
+        (0, _bot4.getTime)(message.channel, params);
         break;
       default:
         (0, _bot4.error)(message.channel, 'Invalid command ' + COMMAND);

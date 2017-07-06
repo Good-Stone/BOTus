@@ -7,10 +7,15 @@ exports.error = error;
 exports.parseMessage = parseMessage;
 exports.getRandomizedTeams = getRandomizedTeams;
 exports.getRandomMeme = getRandomMeme;
+exports.getTime = getTime;
 
 var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
+
+var _momentTimezone = require('moment-timezone');
+
+var _momentTimezone2 = _interopRequireDefault(_momentTimezone);
 
 var _bot = require('./bot.constants');
 
@@ -56,5 +61,12 @@ function getRandomMeme(channel, images) {
   channel.send('', {
     file: imageUrl
   });
+}
+
+function getTime(channel, timezone) {
+  if (timezone.length > 1) return error(channel, 'Please specify only one timezone');
+
+  var currentTime = _momentTimezone2.default.tz(timezone[0]);
+  return channel.send('Current time in ' + timezone + ': ' + currentTime.format('h:mm:ss a'));
 }
 //# sourceMappingURL=bot.utils.js.map

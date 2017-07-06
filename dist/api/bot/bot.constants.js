@@ -14,6 +14,7 @@ var EVENT_RECEIVED_MESSAGE = exports.EVENT_RECEIVED_MESSAGE = 'message';
 // Commands without prefix
 var COMMAND_RANDOMIZE = exports.COMMAND_RANDOMIZE = 'randomize';
 var COMMAND_GIFFME = exports.COMMAND_GIFFME = 'giffme';
+var COMMAND_TIME = exports.COMMAND_TIME = 'time';
 
 var IMAGES = exports.IMAGES = ['http://i.imgur.com/IrkSwDC.jpg', 'http://i.imgur.com/k0nglDG.png', 'http://i.imgur.com/K7X8G4A.png'];
 // Greetings
