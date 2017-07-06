@@ -9,8 +9,9 @@ import {
   GREETING_EVENING,
 } from './bot.constants';
 import {
-  randomize,
+  error,
   parseMessage,
+  getRandomizedTeams,
   getRandomMeme,
 } from './bot.utils';
 
@@ -53,23 +54,15 @@ export function onReady() {
 export function onReceivedMessage(message) {
   const { COMMAND, params } = parseMessage(message);
 
-  log(parseMessage(message));
-  switch (COMMAND) {
-    case COMMAND_RANDOMIZE:
-      {
-        const teams = randomize(params);
+  if (COMMAND) {
+    log(`COMMAND: ${COMMAND}, params: ${params}`);
 
-        message.channel.send(`mga bobong radiant: ${teams[0]}\nmga bobong dire: ${teams[1]}`);
+    switch (COMMAND) {
+      case COMMAND_RANDOMIZE: getRandomizedTeams(message.channel, params);
         break;
-      }
-    case COMMAND_GIFFME:
-      {
-        getRandomMeme(message.channel, IMAGES);
+      case COMMAND_GIFFME: getRandomMeme(message.channel, IMAGES);
         break;
-      }
-    default:
-      {
-        log('Wat?');
-      }
+      default: error(message.channel, `Invalid command ${COMMAND}`);
+    }
   }
 }
