@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import moment from 'moment-timezone';
 import {
   PREFIX,
   ERROR_MESSAGES,
@@ -44,4 +45,11 @@ export function getRandomMeme(channel, images) {
   channel.send('', {
     file: imageUrl,
   });
+}
+
+export function getTime(channel, timezone) {
+  if (timezone.length > 1) return error(channel, 'Please specify only one timezone');
+
+  const currentTime = moment.tz(timezone[0]);
+  return channel.send(`Current time in ${timezone}: ${currentTime.format('h:mm:ss a')}`);
 }
