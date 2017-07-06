@@ -1,8 +1,10 @@
+import moment from 'moment';
 import Botus from './bot.class';
 import {
   WELCOME_MESSAGE,
   COMMAND_RANDOMIZE,
   COMMAND_GIFFME,
+  COMMAND_TIME,
   IMAGES,
   GREETING_MORNING,
   GREETING_NOON,
@@ -13,6 +15,7 @@ import {
   parseMessage,
   getRandomizedTeams,
   getRandomMeme,
+  getTime,
 } from './bot.utils';
 
 const log = require('debug')('bot.event-functions');
@@ -22,26 +25,22 @@ export function onReady() {
 
   // Loop for checking the current time
   setInterval(() => {
-    const currentTime = new Date().toLocaleTimeString().split(':');
-    const hour = parseInt(currentTime[0], 10);
-    const minute = parseInt(currentTime[1], 10);
-    const second = parseInt(currentTime[2], 10);
-    log(hour, minute, second);
+    const currentTime = moment().format('h:mm:ss a');
 
     // Morning, Noon, and Evening greeting
-    if (hour === 7 && minute === 0 && second === 0) {
+    if (currentTime === '7:00:00 am') {
       Botus.channels.forEach((channel) => {
         if (channel.type === 'text') {
           channel.send(GREETING_MORNING);
         }
       });
-    } else if (hour === 12 && minute === 0 && second === 0) {
+    } else if (currentTime === '12:00:00 pm') {
       Botus.channels.forEach((channel) => {
         if (channel.type === 'text') {
           channel.send(GREETING_NOON);
         }
       });
-    } else if (hour === 19 && minute === 0 && second === 0) {
+    } else if (currentTime === '7:00:00 pm') {
       Botus.channels.forEach((channel) => {
         if (channel.type === 'text') {
           channel.send(GREETING_EVENING);
@@ -61,6 +60,8 @@ export function onReceivedMessage(message) {
       case COMMAND_RANDOMIZE: getRandomizedTeams(message.channel, params);
         break;
       case COMMAND_GIFFME: getRandomMeme(message.channel, IMAGES);
+        break;
+      case COMMAND_TIME: getTime(message.channel, params);
         break;
       default: error(message.channel, `Invalid command ${COMMAND}`);
     }

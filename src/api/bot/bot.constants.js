@@ -17,6 +17,7 @@ export const EVENT_RECEIVED_MESSAGE = 'message';
 // Commands without prefix
 export const COMMAND_RANDOMIZE = 'randomize';
 export const COMMAND_GIFFME = 'giffme';
+export const COMMAND_TIME = 'time';
 
 export const IMAGES = [
   'http://i.imgur.com/IrkSwDC.jpg',
