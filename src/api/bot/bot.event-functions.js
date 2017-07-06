@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from 'moment-timezone';
 import Botus from './bot.class';
 import {
   WELCOME_MESSAGE,
@@ -25,7 +25,7 @@ export function onReady() {
 
   // Loop for checking the current time
   setInterval(() => {
-    const currentTime = moment().format('h:mm:ss a');
+    const currentTime = moment.tz('Asia/Manila').format('h:mm:ss a');
 
     // Morning, Noon, and Evening greeting
     if (currentTime === '7:00:00 am') {
