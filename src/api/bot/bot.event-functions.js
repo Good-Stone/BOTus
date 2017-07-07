@@ -63,7 +63,7 @@ export function onReceivedMessage(message) {
         break;
       case COMMAND_TIME: getTime(message.channel, params);
         break;
-      default: error(message.channel, `Invalid command ${COMMAND}`);
+      default: error(message.channel, `Invalid command "${COMMAND}"`);
     }
   }
 }

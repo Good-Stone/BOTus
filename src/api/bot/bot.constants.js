@@ -10,6 +10,8 @@ export const ERROR_MESSAGES = [
   'ako lang pwedeng cactus dito ah',
   'libre mo muna ko tols',
   'gago ka ba?',
+  'tol pagising mamaya',
+  'mukhang masarap yan ah',
 ];
 
 // Events
