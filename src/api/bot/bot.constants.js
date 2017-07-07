@@ -11,14 +11,18 @@ export const ERROR_MESSAGES = [
   'libre mo muna ko tols',
   'gago ka ba?',
 ];
+
 // Events
 export const EVENT_READY = 'ready';
 export const EVENT_RECEIVED_MESSAGE = 'message';
+export const EVENT_GUILD_MEMBER_ADD = 'guildMemberAdd';
+
 // Commands without prefix
 export const COMMAND_RANDOMIZE = 'randomize';
 export const COMMAND_GIFFME = 'giffme';
 export const COMMAND_TIME = 'time';
 
+// Images
 export const IMAGES = [
   'http://i.imgur.com/IrkSwDC.jpg',
   'http://i.imgur.com/k0nglDG.png',
@@ -31,6 +35,7 @@ export const IMAGES = [
   'http://i.imgur.com/3WJbSiF.jpg',
   'http://i.imgur.com/XmZSZ7q.jpg',
 ];
+
 // Greetings
 export const GREETING_MORNING = 'Good morning niggas! Kain na mga butaw!';
 export const GREETING_NOON = 'Lunch time na boiisss!';
