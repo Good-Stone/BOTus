@@ -14,6 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _bot2.default.on(_bot3.EVENT_READY, _bot4.onReady);
 _bot2.default.on(_bot3.EVENT_RECEIVED_MESSAGE, _bot4.onReceivedMessage);
+_bot2.default.on(_bot3.EVENT_GUILD_MEMBER_ADD, _bot4.onGuildMemberAdd);
 
 _bot2.default.login(process.env.DISCORD_TOKEN);
 //# sourceMappingURL=bot.event.js.map

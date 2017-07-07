@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.onReady = onReady;
 exports.onReceivedMessage = onReceivedMessage;
+exports.onGuildMemberAdd = onGuildMemberAdd;
 
 var _momentTimezone = require('moment-timezone');
 
@@ -24,7 +25,7 @@ var log = require('debug')('bot.event-functions');
 
 function onReady() {
   log(_bot3.WELCOME_MESSAGE + ' Nigga im alive');
-  _bot2.default.user.setGame('with my Dog');
+  _bot2.default.user.setGame('with my Cat');
 
   // Loop for checking the current time
   setInterval(function () {
@@ -75,5 +76,13 @@ function onReceivedMessage(message) {
         (0, _bot4.error)(message.channel, 'Invalid command ' + COMMAND);
     }
   }
+}
+
+function onGuildMemberAdd(member) {
+  log('"' + member.user.tag + '" has joined "' + member.guild.name + '"');
+
+  member.guild.defaultChannel.send('Welcome to ' + member.guild.name, {
+    reply: member.user.id
+  });
 }
 //# sourceMappingURL=bot.event-functions.js.map
