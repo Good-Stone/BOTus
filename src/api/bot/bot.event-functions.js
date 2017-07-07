@@ -22,7 +22,7 @@ const log = require('debug')('bot.event-functions');
 
 export function onReady() {
   log(`${WELCOME_MESSAGE} Nigga im alive`);
-  Botus.user.setGame('with my Dog');
+  Botus.user.setGame('with my Doggg');
 
   // Loop for checking the current time
   setInterval(() => {
