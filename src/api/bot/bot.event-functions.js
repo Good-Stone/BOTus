@@ -68,3 +68,11 @@ export function onReceivedMessage(message) {
     }
   }
 }
+
+export function onGuildMemberAdd(member) {
+  log(`"${member.user.tag}" has joined "${member.guild.name}"`);
+
+  member.guild.defaultChannel.send(`Welcome to ${member.guild.name}`, {
+    reply: member.user.id,
+  });
+}
