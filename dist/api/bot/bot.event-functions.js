@@ -24,7 +24,7 @@ var log = require('debug')('bot.event-functions');
 
 function onReady() {
   log(_bot3.WELCOME_MESSAGE + ' Nigga im alive');
-  _bot2.default.user.setGame('with your mom');
+  _bot2.default.user.setGame('with my Dog');
 
   // Loop for checking the current time
   setInterval(function () {
