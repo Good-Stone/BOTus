@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import moment from 'moment-timezone';
+import imagesDb from './imagesDb';
 // import fs from 'fs';
 import {
   PREFIX,
@@ -40,8 +41,8 @@ export function getRandomizedTeams(channel, players) {
   return channel.send(`radiant: ${randomized[0]}\ndire: ${randomized[1]}`);
 }
 
-export function getRandomMeme(channel, images) {
-  const imageUrl = _.sample(images);
+export function getRandomMeme(channel) {
+  const imageUrl = _.sample(imagesDb.find()).url;
   log(imageUrl);
   channel.send('', {
     file: imageUrl,
@@ -56,6 +57,7 @@ export function getTime(channel, timezone) {
 }
 
 export function addUrls(urls) {
-  log(urls);
-  // How to
+  const array = urls.split`,`;
+  array.forEach(e => imagesDb.insert({ url: e }));
+  log(imagesDb.find());
 }

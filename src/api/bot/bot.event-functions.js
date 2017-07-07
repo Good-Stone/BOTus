@@ -5,7 +5,6 @@ import {
   COMMAND_RANDOMIZE,
   COMMAND_GIFFME,
   COMMAND_TIME,
-  IMAGES,
   GREETING_MORNING,
   GREETING_NOON,
   GREETING_EVENING,
@@ -60,7 +59,7 @@ export function onReceivedMessage(message) {
     switch (COMMAND) {
       case COMMAND_RANDOMIZE: getRandomizedTeams(message.channel, params);
         break;
-      case COMMAND_GIFFME: getRandomMeme(message.channel, IMAGES);
+      case COMMAND_GIFFME: getRandomMeme(message.channel);
         break;
       case COMMAND_TIME: getTime(message.channel, params);
         break;
