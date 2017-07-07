@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import moment from 'moment-timezone';
+// import fs from 'fs';
 import {
   PREFIX,
   ERROR_MESSAGES,
@@ -52,4 +53,9 @@ export function getTime(channel, timezone) {
 
   const currentTime = moment.tz(timezone[0]);
   return channel.send(`Current time in ${timezone}: ${currentTime.format('h:mm:ss a')}`);
+}
+
+export function addUrls(urls) {
+  log(urls);
+  // How to
 }
