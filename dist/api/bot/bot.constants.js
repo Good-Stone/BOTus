@@ -16,7 +16,7 @@ var COMMAND_RANDOMIZE = exports.COMMAND_RANDOMIZE = 'randomize';
 var COMMAND_GIFFME = exports.COMMAND_GIFFME = 'giffme';
 var COMMAND_TIME = exports.COMMAND_TIME = 'time';
 
-var IMAGES = exports.IMAGES = ['http://i.imgur.com/IrkSwDC.jpg', 'http://i.imgur.com/k0nglDG.png', 'http://i.imgur.com/K7X8G4A.png'];
+var IMAGES = exports.IMAGES = ['http://i.imgur.com/IrkSwDC.jpg', 'http://i.imgur.com/k0nglDG.png', 'http://i.imgur.com/K7X8G4A.png', 'http://i.imgur.com/oRynQ0E.jpg', 'http://i.imgur.com/uOD4sQP.jpg', 'http://i.imgur.com/2jNOHqn.png', 'http://i.imgur.com/EkQbcHH.jpg', 'http://i.imgur.com/gHhziKl.gif', 'http://i.imgur.com/3WJbSiF.jpg', 'http://i.imgur.com/XmZSZ7q.jpg'];
 // Greetings
 var GREETING_MORNING = exports.GREETING_MORNING = 'Good morning niggas! Kain na mga butaw!';
 var GREETING_NOON = exports.GREETING_NOON = 'Lunch time na boiisss!';
