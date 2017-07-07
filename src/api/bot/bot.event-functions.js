@@ -22,7 +22,7 @@ const log = require('debug')('bot.event-functions');
 
 export function onReady() {
   log(`${WELCOME_MESSAGE} Nigga im alive`);
-  Botus.user.setGame('with my Dog');
+  Botus.user.setGame('with my Pussy');
 
   // Loop for checking the current time
   setInterval(() => {
@@ -67,4 +67,12 @@ export function onReceivedMessage(message) {
       default: error(message.channel, `Invalid command ${COMMAND}`);
     }
   }
+}
+
+export function onGuildMemberAdd(member) {
+  log(`"${member.user.tag}" has joined "${member.guild.name}"`);
+
+  member.guild.defaultChannel.send(`Welcome to ${member.guild.name}`, {
+    reply: member.user.id,
+  });
 }

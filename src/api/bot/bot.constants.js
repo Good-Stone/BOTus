@@ -11,9 +11,12 @@ export const ERROR_MESSAGES = [
   'libre mo muna ko tols',
   'gago ka ba?',
 ];
+
 // Events
 export const EVENT_READY = 'ready';
 export const EVENT_RECEIVED_MESSAGE = 'message';
+export const EVENT_GUILD_MEMBER_ADD = 'guildMemberAdd';
+
 // Commands without prefix
 export const COMMAND_RANDOMIZE = 'randomize';
 export const COMMAND_GIFFME = 'giffme';
